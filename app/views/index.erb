@@ -65,24 +65,22 @@
   </table>
   </div>
 
-  <div class="start">
-   <form name="start" class="start" action="/start" method="POST">
-    <label for="player1">Player 1</label><input type="text" name="player1">
-    <label for="player2">Player 2</label><input type="text" name="player2">
-     <input class="start-button" type="submit" value="Start!">
-   </form>
-  </div>  
+<div class="start-div">
+  <%= erb :_start %>
+</div>  
+
 
 
 <div class="game-play">  
   <p> Press q or p to play! </p>
-  <ul>
-    <li> <%= @p1 %> </li> VS
-    <li> <%= @p2 %> </li>    
+  <ul> 
+    <li> <%= params[:player1] %> </li> vs
+    <li> <%= params[:player2] %> </li>   
   </ul>
+<!--    <form name="go" class="go" action="/go" method="POST">
+   <input class="start-button" type="submit" value="Start!">
+ </form> -->
 </div> 
-
-
 
   <div class="game-finish">
     <span id="winner"></span>

@@ -4,13 +4,11 @@ get '/' do
   erb :index
 end
 
-# was get '/start/:player1/:player2'
 get '/start/:player1/:player2' do
-  # DELETE THIS - JUST WANT TO MAKE SURE THAT JS HAS TAKEN OVER
   @p1 = Player.find(params[:player1])
   @p2 = Player.find(params[:player2])
-  # p @player1 = @p1
-  # p @player2 = @p2.nickname
+  @player1 = @p1.nickname
+  @player2 = @p2.nickname
   erb :index
 end
 
@@ -27,7 +25,7 @@ post '/start' do
   @player2 = Player.create(nickname: p2)
   @game = Game.create(start_time: Time.now)
   if request.xhr?
-    erb :index
+    erb :index, layout: false
   else
     redirect "/start/#{@player1.id}/#{@player2.id}"
   end
