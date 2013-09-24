@@ -5,15 +5,17 @@
   border: 1px dotted black;
 }
 
-body {text-align:center;}
+body {
+  text-align:center;
+}
 
 th {
   text-align: left;
 }
 
-  table.center {
-    margin-left:auto; 
-    margin-right:auto;
+table.center {
+  margin-left:auto; 
+  margin-right:auto;
   }
 
 .racer_table td {
@@ -31,7 +33,17 @@ th {
   background-color: blue;
 }
 
+div.game-play {
+  visibility: hidden;
+}
 
 div.game-finish {
   visibility: hidden;
 }
+
+div.start {
+  visibility: hidden;
+  
+}
+
+

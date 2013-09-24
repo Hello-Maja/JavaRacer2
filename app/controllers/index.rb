@@ -5,6 +5,12 @@ get '/' do
   erb :index
 end
 
+get '/start/:player1/:player2' do
+  # DELETE THIS - JUST WANT TO MAKE SURE THAT JS HAS TAKEN OVER
+  @player1 = params[:player1]
+  @player2 = params[:player2]
+  erb :index
+end
 
 get '/end' do
   erb :index
@@ -19,6 +25,7 @@ post '/start' do
   @player1 = Player.create(nickname: @player1)
   @player2 = Player.create(nickname: @player2)
   @game = Game.create(start_time: Time.now)
+  redirect "/start/#{@player1.id}/#{@player2.id}"
 end
 
 post '/end' do

@@ -66,12 +66,19 @@
 
  <div class="start">
   <form name="start" class="start" action="/start" method="POST">
-   <label for="player1">Player 1</label><input type="text" name="player1">
-   <label for="player2">Player 2</label><input type="text" name="player2">
+   <label for="player1"> <%= @player1 %> </label><input type="text" name="player1">
+   <label for="player2"> <%= @player2 %>  </label><input type="text" name="player2">
     <input class="start-button" type="submit" value="Start!">
   </form>
   </div>  
 </div>
+
+<div class="game-play">
+  <ul>
+    <li>@player1</li> VS
+    <li>@player2</li>
+  </ul>
+</div>  
 
   <div class="game-finish">
     <span id="winner"></span>

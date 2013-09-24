@@ -15,18 +15,18 @@ $(document).ready(function() {
   //Create URL (bitly style)
   //Output Winner name, race duration, URL
 
-$('.start-button').on('submit', function(event){
+$('.start-button').on('click', function(event){
+    event.preventDefault();
+    console.log('What the EFF?')
+    $('div.game-play').css({'visibility':'visible'});
   // event.preventDefault();
-  $event.post('/start', function(response) {
-   console.log('TEST');
-   console.log(response);
-   });
-  });
 
+  // $.post('/start', function(response) {
+  //  console.log('TEST');
+  //  console.log(response);
+  //  });
 
-
-  $(document).on('keyup', function(event){
-
+  $('.center-div').on('keyup', function(event){
       if (event.keyCode == 81) {
         pl1 = $('#player1_strip').find('td:not([class]):first').length
         if (pl1 == 1 && p2_finished == false) {
@@ -71,3 +71,6 @@ $('.start-button').on('submit', function(event){
   });
 
 });
+
+//this ends the start-button function
+  });
