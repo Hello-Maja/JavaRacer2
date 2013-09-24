@@ -1,14 +1,16 @@
 # GET ===================================
 
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
+# was get '/start/:player1/:player2'
 get '/start/:player1/:player2' do
   # DELETE THIS - JUST WANT TO MAKE SURE THAT JS HAS TAKEN OVER
-  @player1 = params[:player1]
-  @player2 = params[:player2]
+  @p1 = Player.find(params[:player1])
+  @p2 = Player.find(params[:player2])
+  # p @player1 = @p1
+  # p @player2 = @p2.nickname
   erb :index
 end
 
@@ -16,16 +18,19 @@ get '/end' do
   erb :index
 end
 
-
 # POST ==================================
 
 post '/start' do
-  @player1= params[:player1]
-  @player2= params[:player2]
-  @player1 = Player.create(nickname: @player1)
-  @player2 = Player.create(nickname: @player2)
+  p1 = params[:player1]
+  p2 = params[:player2]
+  @player1 = Player.create(nickname: p1)
+  @player2 = Player.create(nickname: p2)
   @game = Game.create(start_time: Time.now)
-  redirect "/start/#{@player1.id}/#{@player2.id}"
+  if request.xhr?
+    erb :index
+  else
+    redirect "/start/#{@player1.id}/#{@player2.id}"
+  end
 end
 
 post '/end' do

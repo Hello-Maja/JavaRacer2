@@ -1,0 +1,81 @@
+START NEW BRANCH
+ERASE ALL JS EXCEPT GAME LOGIC?
+
+1. GET PLAYERS NAMES (CREATE PLAYERS / SAVE THIS INFO TO DATABASE)
+2. START GAME (CREATE GAME / START TIMER)
+3. END GAME (SAVE END TIME / UPDATE GAME)
+4. DECLARE WINNER (SAVE WINNER TO DATABASE)
+
+WORK ON PORTFOLIO PROJECTS
+
+Player.protoype
+  Player.prototype.is_winner
+
+These are the same:
+test = new Function()
+function test() []
+
+CREATING OBJECTS - OBJECT LITERAL - creating instance just by setting value of it
+Constructor function or just create a object
+
+object  = new Object()  //constructor function
+object2 = {}            //object created with no properties
+
+torey.age = 33
+entered torey
+receivd {age: 33}
+torey.get_older = function() {this.age+=1}
+
+terah = {age: 32}
+
+To make his whole family, he might want to use a constructor function...
+
+undefined = Just updates a property but the function doesn't return anything
+
+
+OBJECT CONSTRUCTOR
+  Now we're setting information on initialization for the new instance of House...
+function House(min_temp, max_temp, temp){
+	this.min_temp  = min_temp;
+	this.max_temp  = max_temp;
+	this.temp      = temp;
+	this.heater_on = false;
+	this.ac_on     = false;
+
+  this.toggle_heater = function() {
+    //we can add methods to the prototype of the house constructor...First it will look inside itself for properties requested, otherwise it'll look to its prototype to see if it has it...When we use a constructor function, we can then extend that through the prototype of the constructor function...
+    We can all this on an instance of the house class.
+  }
+
+WHEN WE ARE TRYING TO TOGGLE heater properties (a function) - when we try to invoke that function, it will look with in that objects properties. if it doesn't find it there, it will look at the properties of its prototype. Taking Ruby instance methods from Ruby.
+
+  USE PROTOTYPES
+}
+
+house.heater_on = true
+
+House.prototype.toggle_heater = function(){
+	this.heater_on = !heater_on
+	if (this.heater_on) this.ac_on = false;
+	this.heater_on? console.log("The heater is on") : ("The heater is off")
+}
+
+house = new House(75, 77, 75);
+
+house.toggle_heater()
+undefined but sets heater_on to true in the instance...
+
+To namespace a function you would create an object for it...
+
+House capital H is a function - when you put the new keyword in front of it you alter its context to make it a construct.  Functions in js are objects.  
+
+Function constructor...Function.new vs Function created with function literal syntax (its still an instance of function)
+
+new.House this becomes the instance thats being created...If you don't add the new keyword, you add this to the window object...A function which is not tied to an object, the 'this' is the global object, or the window.
+
+Can add properties in the constructor function or on the instance...
+
+If I don't have this built within myself I an check outside myself
+
+
+

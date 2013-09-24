@@ -4,9 +4,21 @@
 4. DECLARE WINNER (SAVE WINNER TO DATABASE)
 
 $(document).ready(function() {
-  p1_finished = false
-  p2_finished = false
+  // p1_finished = false
+  // p2_finished = false
   console.log('just begun')
+  //Show login screen
+  //After users are logged in create new names database
+  //hide login, 
+  //Label tracks with player names or display these on screen
+  //Show start button
+  //When start button is clicked create new game & save players
+  //Hide start button and display countdown
+  //Start race - log Time.now (save to database)
+  //End race - log Time.now (save to database)
+  //Calculate race duration and save this to database
+  //Create URL (bitly style)
+  //Output Winner name, race duration, URL
 
 $('.start').on('submit', function(event){
     console.log('just hit the start button')
@@ -25,11 +37,9 @@ $('.start').on('submit', function(event){
   $.post(url, data, function(response) {
     console.log('POST STUFF');
     console.log(response);
-    // $('div.game-play').show();
+    $('div.game-play').show();
   });
 
-
-  //Start game play
   $('.center-div').on('keyup', function(event){
       if (event.keyCode == 81) {
         pl1 = $('#player1_strip').find('td:not([class]):first').length
@@ -59,14 +69,6 @@ $('.start').on('submit', function(event){
       }
     });
 
-    //Reset Game
-    resetBoard();
-  });
-
-
-
-
-function resetBoard(){
     $('#reset').on('click', function(e) {
     e.preventDefault();
     $('.game-finish').css('visibility','hidden');
@@ -81,4 +83,8 @@ function resetBoard(){
     p1_finished = false
     p2_finished = false
   });
+
 });
+
+//this ends the start-button function
+  });
