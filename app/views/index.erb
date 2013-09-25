@@ -72,14 +72,7 @@
 
 
 <div class="game-play">  
-  <p> Press q or p to play! </p>
-  <ul> 
-    <li> <%= params[:player1] %> </li> vs
-    <li> <%= params[:player2] %> </li>   
-  </ul>
-<!--    <form name="go" class="go" action="/go" method="POST">
-   <input class="start-button" type="submit" value="Start!">
- </form> -->
+  <%= erb :_game_play %>
 </div> 
 
   <div class="game-finish">

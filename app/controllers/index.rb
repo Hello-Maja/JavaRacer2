@@ -31,6 +31,11 @@ post '/start' do
   end
 end
 
+post '/winner' do
+  @winner = params[:player]
+  
+end
+
 post '/end' do
   @game_end = Game.update(end_time: Time.now)
 end
